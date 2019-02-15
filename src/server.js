@@ -46,7 +46,7 @@ async function checkLogin(req, res, next) {
     next() 
   } catch(e) {
     console.log(e)
-    return res.status(500).send('Internal server error')
+    return res.redirect(`${process.env.USER_SERVICE_URL}?serviceIdentifier=${process.env.SERVICE_ID}`)
   }
 }
 
