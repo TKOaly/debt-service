@@ -14,6 +14,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 app.get('/', checkLogin, (req, res) => {
+  req.user.email = 'hugo.holmqvist@cs.helsinki.fi'
   const stmt = db.prepare('SELECT * FROM debt WHERE email = ?')
   stmt.run(req.user.email)
   const arr = []
@@ -24,7 +25,7 @@ app.get('/', checkLogin, (req, res) => {
     }
     arr.push(row)
   }, () => {
-    res.render('app', {debt: arr})
+    res.render('app', {debt: arr, userScreenName: req.user.screenName})
   })
 })
 
