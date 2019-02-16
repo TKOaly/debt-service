@@ -6,7 +6,7 @@ module.exports = function app({debt, userScreenName} ) {
     <DefaultLayout>
       <div style={{fontFamily: 'Arial'}}>
         <h1>Moi {userScreenName}</h1>
-        <h3>Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää jonkin aikaa ennenkuin maksun suoritus näkyy sivuilla. Punaisella merkityt maksut ovat maksamattomia ja vihreät maksettuja.</h3>
+        <h3>Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää jonkin aikaa ennenkuin maksun suoritus näkyy sivuilla.</h3>
         <h2>Maksutiedot: </h2>
         <p>Tilinumero: FI89 7997 7995 1312 86</p>
         <p>Saaja: TKO-äly ry</p>
