@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.app__container {
+  padding: 0 1rem;
+  box-sizing: border-box;
+  max-width: 600px;
+}
+
+.payment-details__table {
+  width: 100%;
+}
+
+.payment-details-row__value {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  font-size: 0.9rem;
+}
+
+.payment-details__header,
+.debts__header,
+.paid__header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+.debt-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.debt-list--paid .debt-list-item {
+  border-left-color: #2ecc71;
+}
+
+.debt-list-item {
+  border-left: 3px solid #e74c3c;
+  border-radius: 3px;
+  max-width: 400px;
+  margin: 0 0 1rem 0;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.debt-list-item__title {
+  /*font-weight: 500;*/
+  padding-bottom: 0.75rem;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.debt-list--paid .debt-list-item__complain {
+  display: none;
+}
+
+.debt-list-item__complain {
+  padding-top: 0.4rem;
+  padding-bottom: 0.1rem;
+  border-top: 1px solid #eee;
+  text-align: right;
+}
+
+.debt-list-item__complain-button {
+  text-decoration: none;
+  color: #555;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  /*border: 1px solid #bbb;*/
+}
+
+.debt-list-item__content {
+  padding: 0.25rem 0.5rem 0 0.5rem;
+  font-size: 0.9rem;
+  margin: 0;
+  padding-bottom: 0.4rem;
+}
+
+.debt-list-item__spec-title,
+.debt-list-item__spec-value {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.debt-list-item__spec {
+  display: flex;
+  flex-direction: row;
+  line-height: 1.8em;
+}
+
+.debt-list-item__spec-value {
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
