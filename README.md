@@ -2,7 +2,7 @@
 
 For automatic restart after reboot and when using systemctl, add following unit file as, for example, /lib/systemd/system/velat.service :
 
-[Unit]
+`[Unit]
 Description=velat-palvelu
 
 [Service]
@@ -17,5 +17,6 @@ WorkingDirectory=/srv/debt-service/
 
 [Install]
 WantedBy=multi-user.target
+`
 
 Then do 'systemctl enable velat' and 'systemctl start velat'.
