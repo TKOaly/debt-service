@@ -1,6 +1,21 @@
 # debt-service
 
-For automatic restart after reboot and when using systemctl, add following unit file as, for example, /lib/systemd/system/velat.service :
+## Introduction
+
+This repository contains source code for the TKO-äly Debt service that runs on https://velat.tko-aly.fi.
+
+## Environment variables
+
+```
+PORT=5000
+DB_FILE=""
+USER_SERVICE_URL=https://users.tko-aly.fi
+SERVICE_ID=""
+```
+
+## Systemd
+
+For automatic restart after reboot and when using systemctl, add following unit file as, for example, `/lib/systemd/system/velat.service` :
 
 ```[Unit]
 Description=velat-palvelu
@@ -19,4 +34,4 @@ WorkingDirectory=/srv/debt-service/
 WantedBy=multi-user.target
 ```
 
-Then do 'systemctl enable velat' and 'systemctl start velat'.
+Then, run `systemctl enable velat` and `systemctl start velat`.
