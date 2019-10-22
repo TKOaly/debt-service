@@ -2,17 +2,18 @@
 
 require('dotenv').config()
 const express = require('express')
+const path = require('path')
 const request = require('request-promise')
 const sqlite3 = require('sqlite3').verbose()
 const db = new sqlite3.Database(process.env.DB_FILE)
 const cp = require('cookie-parser')
 
-const PORT = process.env.PORT || 8080
+const PORT = Number(process.env.PORT || 8080) 
 
 const app = express()
 app.use(cp())
-app.use('/public', express.static(__dirname + '/public'))
-app.set('views', __dirname + '/views')
+app.use('/public', express.static(path.resolve(__dirname, 'public')))
+app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
@@ -29,7 +30,7 @@ app.get('/', checkLogin, (req, res) => {
       arr.push(row)
     },
     () => {
-      res.render('app', { debt: arr, userScreenName: req.user.screenName })
+      res.render('app', { debt: arr, userScreenName: req.user.screenName, userServiceUrl: process.env.USER_SERVICE_URL, serviceIdentifier: process.env.SERVICE_ID })
     }
   )
 })

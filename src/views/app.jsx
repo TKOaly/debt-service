@@ -2,12 +2,13 @@ const React = require('react')
 const classes = require('classnames')
 const DefaultLayout = require('./layouts/default')
 
-const Header = ({ userScreenName }) => (
+const Header = ({ userScreenName, userServiceUrl, serviceIdentifier }) => (
   <header className="header">
     <h1>Moi {userScreenName}</h1>
+    <p><a href={userServiceUrl + "/logout?serviceIdentifier=" + serviceIdentifier}></a></p>
     <p>
-      Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää jonkin
-      aikaa ennenkuin maksun suoritus näkyy sivuilla.
+      Tässä on sinun velat. Muista, että maksamisen jälkeen voi kestää jonkin
+      aikaa, ennen kuin maksun suoritus näkyy sivuilla.
     </p>
   </header>
 )
@@ -90,7 +91,7 @@ const Paid = ({ debts }) => (
   </section>
 )
 
-module.exports = function app({ debt, userScreenName }) {
+module.exports = function app({ debt, userScreenName, userServiceUrl, serviceIdentifier }) {
   const paid = debt.filter(_ => _.payed === 1)
   const unpaid = debt.filter(_ => _.payed !== 1)
 
@@ -98,7 +99,7 @@ module.exports = function app({ debt, userScreenName }) {
     <DefaultLayout>
       <div className="app">
         <main className="app__container">
-          <Header userScreenName={userScreenName} />
+          <Header userScreenName={userScreenName} serviceIdentifier={serviceIdentifier} userServiceUrl={userServiceUrl}/>
           <PaymentDetails />
           <Debts debts={unpaid} />
           <Paid debts={paid} />
