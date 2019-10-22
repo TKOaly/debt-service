@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-require('dotenv').config()
-const express = require('express')
-const request = require('request-promise')
-const sqlite3 = require('sqlite3').verbose()
-const db = new sqlite3.Database(process.env.DB_FILE)
-const cp = require('cookie-parser')
+require("dotenv").config();
+const express = require("express");
+const request = require("request-promise");
+const sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database(process.env.DB_FILE);
+const cp = require("cookie-parser");
 
 const PORT = process.env.PORT || 8080;
 
@@ -57,6 +57,7 @@ async function checkLogin(req, res, next) {
             `${process.env.USER_SERVICE_URL}/api/users/me`,
             opts
         ).then(JSON.parse);
+        // eslint-disable-next-line require-atomic-updates
         req.user = result.payload;
         next();
     } catch (e) {

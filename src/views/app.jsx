@@ -6,8 +6,8 @@ const Header = ({ userScreenName }) => (
     <header className="header">
         <h1>Moi {userScreenName}</h1>
         <p>
-            Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää
-            jonkin aikaa ennenkuin maksun suoritus näkyy sivuilla.
+            Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää jonkin
+            aikaa ennenkuin maksun suoritus näkyy sivuilla.
         </p>
     </header>
 );
@@ -24,10 +24,7 @@ const PaymentDetails = () => (
         <h2 className="payment-details__header">Maksutiedot</h2>
         <table className="payment-details__table">
             <tbody>
-                <PaymentDetailsRow
-                    text="Tilinumero"
-                    content="FI89 7997 7995 1312 86"
-                />
+                <PaymentDetailsRow text="Tilinumero" content="FI89 7997 7995 1312 86" />
                 <PaymentDetailsRow text="Saaja" content="TKO-äly ry" />
                 <PaymentDetailsRow
                     text="Viitenumero"
@@ -62,7 +59,7 @@ const DebtListItem = ({ event, amount, refnum }) => (
                 rel="noopener noreferrer"
                 target="_blank"
             >
-                Valita
+        Valita
             </a>
         </div>
     </li>
