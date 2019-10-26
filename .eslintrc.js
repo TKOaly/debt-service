@@ -16,10 +16,10 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    indent: ["error", 4],
+    indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
-    quotes: ["error", "double"],
-    semi: ["error", "always"],
+    quotes: ["error", "single"],
+    semi: ["error", "never"],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "no-console": ["warn"],
