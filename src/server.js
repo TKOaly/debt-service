@@ -29,7 +29,10 @@ app.get('/', checkLogin, (req, res) => {
       arr.push(row)
     },
     () => {
-      res.render('app', { debt: arr, userScreenName: req.user.screenName })
+      res.render('app', {
+        debt: arr,
+        userScreenName: req.user.screenName
+      })
     }
   )
 })
@@ -54,6 +57,7 @@ async function checkLogin(req, res, next) {
       `${process.env.USER_SERVICE_URL}/api/users/me`,
       opts
     ).then(JSON.parse)
+    // eslint-disable-next-line require-atomic-updates
     req.user = result.payload
     next()
   } catch (e) {

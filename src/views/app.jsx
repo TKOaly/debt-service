@@ -6,8 +6,8 @@ const Header = ({ userScreenName }) => (
   <header className="header">
     <h1>Moi {userScreenName}</h1>
     <p>
-      Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää jonkin
-      aikaa ennenkuin maksun suoritus näkyy sivuilla.
+            Tässä on sinun velat. Muista että maksamisen jälkeen voi kestää jonkin
+            aikaa ennenkuin maksun suoritus näkyy sivuilla.
     </p>
   </header>
 )
